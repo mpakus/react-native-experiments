@@ -4,13 +4,12 @@ import {
   Button,
   Item,
   Input,
-  Icon,
   Text,
   Form
 } from "native-base";
 import { observer } from "mobx-react/native";
 import { observable } from "mobx";
-// import { Icon } from 'react-native-vector-icons/FontAwesome5'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 @observer
 export default class Login extends Component {
@@ -66,7 +65,8 @@ const styles = StyleSheet.create({
   },
 
   icon: {
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    marginLeft: 20
   },
 
   input: {

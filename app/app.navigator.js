@@ -1,7 +1,8 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, StackNavigator } from 'react-navigation';
 import SplashScreen from './screens/splash.screen';
 import LoginScreen from './screens/login.screen';
+import MatchScreen from './screens/match.screen';
 
 const Splash = {
   screen: SplashScreen,
@@ -17,6 +18,22 @@ const Login = {
   }
 };
 
+const Match = {
+  screen: MatchScreen,
+  navigationOptions: {
+    header: null
+  }
+  // navigationOptions: {
+  //   headerMode: 'screen',
+  //   headerTitle: 'Meetings',
+  //   drawerLabel: 'Meetings'
+  // }
+};
+
+const MatchStack = createStackNavigator({
+  Match: Match
+}, {});
+
 const RouteConfig = {
   initialRoute: 'Splash',
   header: null,
@@ -29,7 +46,8 @@ const RouteConfig = {
 const AppDrawerNavigator = createStackNavigator(
   {
     Splash: Splash,
-    Login: Login
+    Login: Login,
+    Match: { screen: MatchStack }
   },
   RouteConfig
 );
@@ -39,5 +57,7 @@ const AppDrawerNavigator = createStackNavigator(
 // const AppNavigator = createStackNavigator(...);
 
 const AppNavigator = createAppContainer(AppDrawerNavigator);
+
+console.disableYellowBox = true;
 
 export default AppNavigator;

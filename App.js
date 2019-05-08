@@ -15,7 +15,7 @@ import getTheme from './native-base-theme/components';
 import tidy from './native-base-theme/variables/tidy';
 
 type TProps = {};
-export default class App extends Component<TProps> {
+export default class App extends Component<TProps> {  
   render() {
     return (
       <Provider stores={stores}>

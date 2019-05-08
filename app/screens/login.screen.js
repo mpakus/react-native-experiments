@@ -22,11 +22,11 @@ export default class LoginScreen extends Component {
       <Container fluid>
         <View style={styles.container}>
           <Content scrollEnabled={false}>
-            <ImageBackground source={stores.config.LoginBG} style={styles.loginBackground}>
+            {/* <ImageBackground source={stores.config.LoginBG} style={styles.loginBackground}> */}
               <View style={styles.loginForeground}>
                 <Login {...this.props} />
               </View>
-            </ImageBackground>
+            {/* </ImageBackground> */}
           </Content>
         </View>
       </Container>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     left: 0,
     bottom: 0,
-    backgroundColor: '#181818'
+    backgroundColor: '#373b44'
   },
 
   loginBackground: {
